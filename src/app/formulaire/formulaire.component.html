@@ -1,0 +1,22 @@
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label for="name">Nom :</label>
+    <input id="name" formControlName="name" />
+    <div *ngIf="userForm.controls['name'].invalid && userForm.controls['name'].touched">
+      Le nom est requis.
+    </div>
+  
+    <label for="email">Email :</label>
+    <input id="email" formControlName="email" type="email" />
+    <div *ngIf="userForm.controls['email'].invalid && userForm.controls['email'].touched">
+      Email invalide.
+    </div>
+  
+    <label for="password">Mot de passe :</label>
+    <input id="password" formControlName="password" type="password" />
+    <div *ngIf="userForm.controls['password'].invalid && userForm.controls['password'].touched">
+      Le mot de passe est requis.
+    </div>
+  
+    <button type="submit">Envoyer</button>
+  </form>
+  
